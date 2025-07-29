@@ -8,9 +8,9 @@ export default defineConfig({
         outDir: "../dist",
         rollupOptions: {
             input: {
-                main: resolve(__dirname, "index.html"),
-                watchlist: resolve(__dirname, "watchlist.html"),
-                movieDetails: resolve(__dirname, "movieDetails.html"),
+                main: resolve(__dirname, "/index.html"),
+                watchlist: resolve(__dirname, "/watchlist.html"),
+                movieDetails: resolve(__dirname, "/movieDetails.html"),
             },
         },
     },
