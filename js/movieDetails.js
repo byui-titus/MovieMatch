@@ -1,3 +1,5 @@
+import { getStreamingAvailability } from './streamingService.js';
+
 const baseURL =
     import.meta.env.VITE_BASE_URL;
 const apiKey =
@@ -40,6 +42,7 @@ async function fetchMovieDetails(id) {
         );
 
         displayMovieDetails(movie, trailer);
+        showStreamingOptions(movie.title);
     } catch (error) {
         console.error("Error loading movie details:", error);
     }
@@ -67,6 +70,23 @@ function displayMovieDetails(movie, trailer) {
 }
 
 fetchMovieDetails(movieId);
+
+async function showStreamingOptions(title) {
+    const platforms = await getStreamingAvailability(title);
+    const container = document.querySelector("#streamingPlatforms");
+
+    if (!platforms || platforms.length === 0) {
+        container.textContent = "Not available on popular platforms.";
+        return;
+    }
+
+    container.innerHTML = platforms
+        .map(p => `<a href="${p.web_url}" target="_blank">${p.name}</a>`)
+        .join(", ");
+}
+
+// Example usage
+showStreamingOptions();
 
 // Export common calls
 export function getPopularMovies(page = 1) {
