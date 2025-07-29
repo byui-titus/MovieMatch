@@ -8,7 +8,7 @@ export default function renderMovieCard(movie) {
     <button data-id="${movie.id}">Details</button>
   `;
     card.querySelector('button').addEventListener('click', () => {
-        window.location.href = `movieDetails.html?id=${movie.id}`;
+        window.location.href = `/movieDetails.html?id=${movie.id}`;
     });
     return card;
 }
