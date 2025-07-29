@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MovieMatch</title>
+    <link rel="stylesheet" href="css/style.css" />
+</head>
+
+<body>
+    <header class="site-header">
+        <div class="container">
+            <div class="logo">🎬 MovieMatch</div>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="search.html">Search</a></li>
+                    <li><a href="watchlist.html">Watchlist</a></li>
+                    <li>
+                        <a href="login.html" title="Login">
+                            <img src="assets/login-icon.svg" alt="Login" class="login-icon" />
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="watchlist-container">
+        <h1>My Watchlist</h1>
+        <section id="watchlist" class="movie-grid">
+            <!-- Watchlist items will be dynamically injected here -->
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="footer-content">
+            <div class="logo">🎬 MovieMatch</div>
+            <nav>
+                <ul class="footer-links">
+                    <li><a href="/about.html">About</a></li>
+                    <li><a href="/contact.html">Contact</a></li>
+                    <li><a href="/terms.html">Terms</a></li>
+                </ul>
+            </nav>
+            <p>&copy; <span id="year"></span> MovieMatch. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script type="module" src="js/main.js"></script>
+</body>
+
+</html>
