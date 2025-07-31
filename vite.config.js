@@ -7,14 +7,18 @@ const __filename = fileURLToPath(
 const __dirname = dirname(__filename);
 
 export default defineConfig({
-    root: "./",
+    root: "src",
     build: {
         outDir: "../dist",
         rollupOptions: {
             input: {
-                main: resolve(__dirname, "index.html"),
-                watchlist: resolve(__dirname, "watchlist.html"),
-                movieDetails: resolve(__dirname, "movieDetails.html"),
+                main: resolve(__dirname, "src/index.html"),
+                watch_list: resolve(__dirname, "src/watch_list/watch_list.html"),
+                movieDetails: resolve(__dirname, "src/movie_page/movieDetails.html"),
+                login: resolve(__dirname, "src/login/login.html"),
+                about: resolve(__dirname, "src/about/about.html"),
+                contact: resolve(__dirname, "src/about/contact.html"),
+                terms: resolve(__dirname, "src/about/terms.html"),
             },
         },
     },

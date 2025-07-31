@@ -16,7 +16,7 @@
                 <ul>
                     <li><a href="index.html">Home</a></li>
                     <li><a href="search.html">Search</a></li>
-                    <li><a href="watchlist.html">Watchlist</a></li>
+                    <li><a href="watchlist.html">Watch_list</a></li>
                     <li>
                         <a href="login.html" title="Login">
                             <img src="src/public/images/login.svg" alt="Login" class="login-icon" />
@@ -27,12 +27,11 @@
         </div>
     </header>
 
-    <main class="watchlist-container">
-        <h1>My Watchlist</h1>
-        <section id="watchlist" class="movie-grid">
-            <!-- Watchlist items will be dynamically injected here -->
-        </section>
-    </main>
+
+    <main id="movie-details"></main>
+    <div id="streamingPlatforms" class="streaming-section">
+        <!-- Streaming links will load here -->
+    </div>
 
     <footer class="site-footer">
         <div class="footer-content">
@@ -48,7 +47,7 @@
         </div>
     </footer>
 
-    <script type="module" src="js/main.js"></script>
+    <script type="module" src="/js/movieDetails.js"></script>
 </body>
 
 </html>
