@@ -1,4 +1,74 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" /><title>MovieMatch</title><link rel="stylesheet" href="css/style.css" /></head><body><header class="site-header"><div class="container"><div class="logo">🎬 MovieMatch</div><nav class="main-nav"><ul><li><a href="/index.html">Home</a></li><li><a href="/search.html">Search</a></li><li><a href="/src/watch_list/watch_list.html">Watchlist</a></li><li><a href="login.html" title="Login"><img src="src/public/images/login.svg" alt="Login" class="login-icon" /></a></li></ul></nav></div></header><main id="home-page"><section class="hero"><div class="hero-overlay"><div class="hero-content"><h1>🎬 MovieMatch</h1><p>Discover the perfect movie for your mood. Search by genre,
-actor,
-or vibe.</p><div class="search-bar"><input type="text" id="searchInput" placeholder="Try 'action', 'comedy', or 'Tom Hanks'..." /><button id="searchBtn">Search</button></div></div></div></section><section class="movie-section"><h2>Popular Movies</h2><div class="movie-grid"></div></section></main><footer class="site-footer"><div class="footer-content"><div class="logo">🎬 MovieMatch</div><nav><ul class="footer-links"><li><a href="/about.html">About</a></li><li><a href="/contact.html">Contact</a></li><li><a href="/terms.html">Terms</a></li></ul></nav><p>&copy;
-<span id="year"></span>MovieMatch. All rights reserved.</p></div></footer><script type="module" src="js/main.js"></script></body></html>
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background: #fdfdfd;
+    color: #333;
+}
+
+.container {
+    max-width: 800px;
+    margin: 2rem auto;
+    padding: 1rem;
+}
+
+h1,
+h2,
+h3 {
+    color: #222;
+}
+
+a {
+    color: #0077cc;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+ul {
+    padding-left: 1.5rem;
+}
+
+
+/* Contact Page */
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.contact-form label {
+    font-weight: bold;
+}
+
+.contact-form input,
+.contact-form textarea {
+    padding: 0.6rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1rem;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.contact-form textarea {
+    resize: vertical;
+}
+
+.contact-form button {
+    background-color: #0077cc;
+    color: white;
+    border: none;
+    padding: 0.75rem;
+    font-size: 1rem;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.contact-form button:hover {
+    background-color: #005fa3;
+}
