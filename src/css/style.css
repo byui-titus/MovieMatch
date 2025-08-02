@@ -358,3 +358,10 @@ html {
 .movie-section {
     margin-top: -150px;
 }
+
+#watchlistContainer {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 1.5rem;
+    margin-top: 2rem;
+}

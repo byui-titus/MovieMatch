@@ -67,6 +67,9 @@ function displayMovieDetails(movie, trailer) {
       </div>
     </div>
   `;
+    document
+        .getElementById("addToWishlistBtn")
+        .addEventListener("click", () => addToWishlist(movie.id));
 }
 
 fetchMovieDetails(movieId);
@@ -87,6 +90,21 @@ async function showStreamingOptions(title) {
 
 // Example usage
 showStreamingOptions();
+
+export function addToWishlist(movieId) {
+    const saved = localStorage.getItem("witchlist");
+    let wishlist = saved ? JSON.parse(saved) : [];
+
+    if (!wishlist.includes(movieId)) {
+        wishlist.push(movieId);
+        localStorage.setItem("wishlist", JSON.stringify(wishlist));
+        alert("Movie added to wishlist!");
+    } else {
+        alert("Movie is already in your wishlist.");
+    }
+}
+
+
 
 // Export common calls
 export function getPopularMovies(page = 1) {
