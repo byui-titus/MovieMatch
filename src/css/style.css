@@ -359,9 +359,12 @@ html {
     margin-top: -150px;
 }
 
-#watchlistContainer {
+#watchlist-container {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
     gap: 1.5rem;
     margin-top: 2rem;
+    width: 50%;
+    height: auto;
+    text-align: center;
 }
