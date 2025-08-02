@@ -62,17 +62,30 @@ function displayMovieDetails(movie, trailer) {
         <p><strong>Release:</strong> ${movie.release_date}</p>
         <p><strong>Rating:</strong> ⭐ ${movie.vote_average}</p>
         <p>${movie.overview}</p>
+        <button id="add-watchlist">Add to Watchlist</button>
         <h3>Trailer</h3>
         ${trailerEmbed}
       </div>
     </div>
   `;
-    document
-        .getElementById("addToWishlistBtn")
-        .addEventListener("click", () => addToWishlist(movie.id));
+    document.getElementById("add-watchlist").addEventListener("click", () => {
+        addToWatchlist(movie); // Make sure `movie` is in scope
+    });;
 }
 
 fetchMovieDetails(movieId);
+
+function addToWatchlist(movie) {
+    const list = JSON.parse(localStorage.getItem("watchlist")) || [];
+    if (!list.some(m => m.id === movie.id)) {
+        list.push(movie);
+        localStorage.setItem("watchlist", JSON.stringify(list));
+        alert("Movie added to watchlist!");
+    } else {
+        alert("Movie already in watchlist.");
+    }
+}
+
 
 async function showStreamingOptions(title) {
     const platforms = await getStreamingAvailability(title);
@@ -90,21 +103,6 @@ async function showStreamingOptions(title) {
 
 // Example usage
 showStreamingOptions();
-
-export function addToWishlist(movieId) {
-    const saved = localStorage.getItem("witchlist");
-    let wishlist = saved ? JSON.parse(saved) : [];
-
-    if (!wishlist.includes(movieId)) {
-        wishlist.push(movieId);
-        localStorage.setItem("wishlist", JSON.stringify(wishlist));
-        alert("Movie added to wishlist!");
-    } else {
-        alert("Movie is already in your wishlist.");
-    }
-}
-
-
 
 // Export common calls
 export function getPopularMovies(page = 1) {
