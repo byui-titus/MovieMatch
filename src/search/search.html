@@ -6,7 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>MovieMatch</title>
     <link rel="stylesheet" href="/css/style.css" />
-    <script type="module" src="/js/watchlist.js"></script>
 </head>
 
 <body>
@@ -17,23 +16,30 @@
                 <ul>
                     <li><a href="/index.html">Home</a></li>
                     <li><a href="./search/search.html">Search</a></li>
-                    <li><a href="watch_list.html">Watchlist</a></li>
+                    <li><a href="./watch_list/watchlist.html">Watch_list</a></li>
                     <li>
                         <a href="login.html" title="Login">
                             <img src="/images/login.svg" alt="Login" class="login-icon" />
                         </a>
                     </li>
                 </ul>
-                S
             </nav>
         </div>
     </header>
 
-    <main>
-        <h1>My Watchlist</h1>
-        <section id="watchlist-container"></section>
-    </main>
+    <main class="search-container">
+        <h2>Search Movies</h2>
+        <form id="searchForm">
+            <input type="text" id="searchInput" placeholder="Search for a movie..." required />
+            <select id="genreSelect">
+    <option value="">-- Select Genre --</option>
+    <!-- We'll populate this dynamically -->
+  </select>
+            <button type="submit">Search</button>
+        </form>
 
+        <div id="searchResults" class="movie-grid"></div>
+    </main>
     <footer class="site-footer">
         <div class="footer-content">
             <div class="logo">🎬 MovieMatch</div>
@@ -48,7 +54,9 @@
         </div>
     </footer>
 
-    <script type="module" src="/js/main.js"></script>
+    <script type="module" src="/js/movieDetails.js"></script>
+    <script type="module" src="/js/search.js"></script>
+
 </body>
 
 </html>
