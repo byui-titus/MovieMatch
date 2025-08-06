@@ -354,10 +354,6 @@ html {
     border-radius: 10px;
 }
 
-.movie-section {
-    margin-top: -50px;
-}
-
 #watchlist-container {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
