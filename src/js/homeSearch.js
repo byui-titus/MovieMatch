@@ -75,7 +75,7 @@ function displayResults(movies) {
         .map(
             (movie) => `
     <div class="movie-card">
-      <a href="movieDetails.html?id=${movie.id}">
+      <a href="/movie_page/movieDetails.html?id=${movie.id}">
         <img src="https://image.tmdb.org/t/p/w300${movie.poster_path}" alt="${movie.title}" />
         <h3>${movie.title}</h3>
         <p>⭐ ${movie.vote_average || "N/A"}</p>
